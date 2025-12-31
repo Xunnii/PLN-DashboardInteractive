@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import InstagramIcon from '@/components/icons/InstagramIcon';
 
 // Type definitions
 interface FlyerData {
@@ -222,7 +223,7 @@ const Index = ({ flyers: propFlyers = [], videoUrl, kontainerBawah = [] }: TVDis
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 p-4 bg-gradient-to-b from-gray-900/50 to-blue-900/30 overflow-hidden">
+            <main className="flex-1 p-3 bg-gradient-to-b from-gray-900/50 to-blue-900/30 overflow-hidden">
                 <div className="grid grid-cols-4 grid-rows-5 gap-4 h-full w-full">
 
                     {/* LEFT FLYER AREA */}
@@ -288,20 +289,20 @@ const Index = ({ flyers: propFlyers = [], videoUrl, kontainerBawah = [] }: TVDis
                                         </button>
                                     </div>
 
-                                    <div className="absolute top-4 left-4">
+                                    {/* <div className="absolute top-4 left-4">
                                         <div className="bg-gradient-to-r from-cyan-600/80 to-blue-600/80 backdrop-blur-sm px-4 py-2 rounded-lg">
                                             <div className="text-sm font-bold text-white">PLN LIVE STREAMING</div>
                                             <div className="text-xs text-cyan-100">Monitoring Operasional</div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
-                                <div className="absolute top-4 right-4">
+                                {/* <div className="absolute top-4 right-4">
                                     <div className="bg-red-600 px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 animate-pulse">
                                         <span className="w-2 h-2 bg-white rounded-full"></span>
                                         LIVE
                                     </div>
-                                </div>
+                                </div> */}
                             </>
                         ) : (
                             <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900">
@@ -354,8 +355,8 @@ const Index = ({ flyers: propFlyers = [], videoUrl, kontainerBawah = [] }: TVDis
                                             }
                     `}
                                     >
-                                        <div className="text-4xl mb-3 filter drop-shadow-md">{item.icon}</div>
-                                        <div className="text-2xl font-bold text-white tracking-tight leading-none mb-1.5">
+                                        <div className="text-2xl mb-1 filter drop-shadow-md">{item.icon}</div>
+                                        <div className="text-xl font-bold text-white tracking-tight leading-none mb-1">
                                             {item.value}
                                         </div>
                                         <div className={`text-xs uppercase tracking-wider font-semibold ${item.type === 'status' ? 'text-gray-400' : 'text-white/80'}`}>
@@ -421,31 +422,42 @@ const Index = ({ flyers: propFlyers = [], videoUrl, kontainerBawah = [] }: TVDis
             </main>
 
             {/* Footer */}
-            <footer className="bg-gradient-to-r from-gray-900 to-blue-900 border-t border-blue-500/20 py-2 px-6">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-6">
-                        <div className="text-xs text-gray-400">
-                            Update: {formatTime(currentTime)} | PLN TV Dashboard
+
+            <footer className="bg-gradient-to-r from-gray-900 to-blue-900 border-t border-blue-500/20 py-2 px-4">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-1">
+
+                    {/* Kiri */}
+                    <div className="text-xs text-gray-400">
+                        Update: {formatTime(currentTime)} | PLN TV Dashboard
+                    </div>
+
+                    {/* Tengah */}
+                    <div className="text-xs text-gray-300">
+                        Call Center PLN: <span className="text-blue-400 font-medium">123</span> |
+                        Gangguan Dumai: <span className="text-blue-400 font-medium">(0765) 31416</span>
+                    </div>
+
+                    {/* Kanan - Instagram */}
+                    <div className="flex items-center gap-3 text-xs text-gray-300">
+                        <div className="flex items-center gap-1">
+                            <InstagramIcon />
+                            <span className="text-blue-400 font-medium">@pln_id</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <div className={`w-2 h-2 rounded-full ${videoError ? 'bg-red-500' : 'bg-green-500'} animate-pulse`}></div>
-                            <div className="text-xs text-gray-300">
-                                Video: {videoError ? 'OFFLINE' : 'LIVE'}
-                            </div>
+                        <span className="text-gray-500">/</span>
+                        <div className="flex items-center gap-1">
+                            <InstagramIcon />
+                            <span className="text-blue-400 font-medium">@plnuidriaukepri</span>
+                        </div>
+                        <span className="text-gray-500">/</span>
+                        <div className="flex items-center gap-1">
+                            <InstagramIcon />
+                            <span className="text-blue-400 font-medium">@plnup3dumai</span>
                         </div>
                     </div>
 
-                    {/* <div className="flex items-center gap-6">
-                        <div className="text-xs text-blue-300 flex items-center gap-2">
-                            <span className={`w-2 h-2 rounded-full ${isPaused ? 'bg-yellow-500' : 'bg-green-500 animate-pulse'}`}></span>
-                            <span>{isPaused ? 'PAUSED (hover to pause)' : 'Scrolling Active'}</span>
-                        </div>
-                        <div className="text-xs text-gray-400">
-                            ⌨️ Controls: SPACE (pause) | M (mute)
-                        </div>
-                    </div> */}
                 </div>
             </footer>
+
         </div>
     );
 };

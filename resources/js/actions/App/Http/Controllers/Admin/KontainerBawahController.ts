@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-export const edit = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-edit.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+edit.url = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { kontainerBawah: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah:
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-edit.get = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah:
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-edit.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-    const editForm = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-        editForm.get = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:53
  * @route '/admin/kontainer-bawah/{kontainerBawah}/edit'
  */
-        editForm.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:60
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-export const update = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:60
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-update.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+update.url = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { kontainerBawah: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBawa
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:60
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-update.put = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { kontainerBawah: number | { id: number } } | [kontainerBawa
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:60
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-    const updateForm = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { kontainerBawah: number | { id: number } } | [kontainerBawa
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:60
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-        updateForm.put = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { kontainerBawah: number | { id: number } } | [kontainerBawa
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:76
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-export const destroy = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:76
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-destroy.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { kontainerBawah: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { kontainerBawah: number | { id: number } } | [kontainerBaw
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:76
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-destroy.delete = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { kontainerBawah: number | { id: number } } | [kontainer
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:76
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-    const destroyForm = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { kontainerBawah: number | { id: number } } | [kontainer
  * @see app/Http/Controllers/Admin/KontainerBawahController.php:76
  * @route '/admin/kontainer-bawah/{kontainerBawah}'
  */
-        destroyForm.delete = (args: { kontainerBawah: number | { id: number } } | [kontainerBawah: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { kontainerBawah: string | number | { id: string | number } } | [kontainerBawah: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

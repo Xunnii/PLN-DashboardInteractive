@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-export const edit = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-edit.url = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+edit.url = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayVideo: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { displayVideo: number | { id: number } } | [displayVideo: num
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-edit.get = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { displayVideo: number | { id: number } } | [displayVideo: num
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-edit.head = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { displayVideo: number | { id: number } } | [displayVideo: nu
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-    const editForm = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { displayVideo: number | { id: number } } | [displayVideo: nu
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-        editForm.get = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { displayVideo: number | { id: number } } | [displayVideo: nu
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:54
  * @route '/admin/display-videos/{displayVideo}/edit'
  */
-        editForm.head = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { displayVideo: number | { id: number } } | [displayVideo: nu
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:61
  * @route '/admin/display-videos/{displayVideo}'
  */
-export const update = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:61
  * @route '/admin/display-videos/{displayVideo}'
  */
-update.url = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+update.url = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayVideo: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { displayVideo: number | { id: number } } | [displayVideo: n
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:61
  * @route '/admin/display-videos/{displayVideo}'
  */
-update.put = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { displayVideo: number | { id: number } } | [displayVideo: n
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:61
  * @route '/admin/display-videos/{displayVideo}'
  */
-    const updateForm = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { displayVideo: number | { id: number } } | [displayVideo: n
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:61
  * @route '/admin/display-videos/{displayVideo}'
  */
-        updateForm.put = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { displayVideo: number | { id: number } } | [displayVideo: n
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:97
  * @route '/admin/display-videos/{displayVideo}'
  */
-export const destroy = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:97
  * @route '/admin/display-videos/{displayVideo}'
  */
-destroy.url = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayVideo: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { displayVideo: number | { id: number } } | [displayVideo: 
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:97
  * @route '/admin/display-videos/{displayVideo}'
  */
-destroy.delete = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { displayVideo: number | { id: number } } | [displayVide
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:97
  * @route '/admin/display-videos/{displayVideo}'
  */
-    const destroyForm = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { displayVideo: number | { id: number } } | [displayVide
  * @see app/Http/Controllers/Admin/DisplayVideoController.php:97
  * @route '/admin/display-videos/{displayVideo}'
  */
-        destroyForm.delete = (args: { displayVideo: number | { id: number } } | [displayVideo: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { displayVideo: string | number | { id: string | number } } | [displayVideo: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

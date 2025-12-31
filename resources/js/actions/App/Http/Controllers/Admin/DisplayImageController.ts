@@ -215,7 +215,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-export const edit = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -230,7 +230,7 @@ edit.definition = {
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-edit.url = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+edit.url = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayImage: args }
     }
@@ -263,7 +263,7 @@ edit.url = (args: { displayImage: number | { id: number } } | [displayImage: num
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-edit.get = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
@@ -272,7 +272,7 @@ edit.get = (args: { displayImage: number | { id: number } } | [displayImage: num
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-edit.head = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -282,7 +282,7 @@ edit.head = (args: { displayImage: number | { id: number } } | [displayImage: nu
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-    const editForm = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -292,7 +292,7 @@ edit.head = (args: { displayImage: number | { id: number } } | [displayImage: nu
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-        editForm.get = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
@@ -301,7 +301,7 @@ edit.head = (args: { displayImage: number | { id: number } } | [displayImage: nu
  * @see app/Http/Controllers/Admin/DisplayImageController.php:33
  * @route '/admin/display-images/{displayImage}/edit'
  */
-        editForm.head = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -317,7 +317,7 @@ edit.head = (args: { displayImage: number | { id: number } } | [displayImage: nu
  * @see app/Http/Controllers/Admin/DisplayImageController.php:64
  * @route '/admin/display-images/{displayImage}'
  */
-export const update = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -332,7 +332,7 @@ update.definition = {
  * @see app/Http/Controllers/Admin/DisplayImageController.php:64
  * @route '/admin/display-images/{displayImage}'
  */
-update.url = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+update.url = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayImage: args }
     }
@@ -365,7 +365,7 @@ update.url = (args: { displayImage: number | { id: number } } | [displayImage: n
  * @see app/Http/Controllers/Admin/DisplayImageController.php:64
  * @route '/admin/display-images/{displayImage}'
  */
-update.put = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
@@ -375,7 +375,7 @@ update.put = (args: { displayImage: number | { id: number } } | [displayImage: n
  * @see app/Http/Controllers/Admin/DisplayImageController.php:64
  * @route '/admin/display-images/{displayImage}'
  */
-    const updateForm = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -390,7 +390,7 @@ update.put = (args: { displayImage: number | { id: number } } | [displayImage: n
  * @see app/Http/Controllers/Admin/DisplayImageController.php:64
  * @route '/admin/display-images/{displayImage}'
  */
-        updateForm.put = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -406,7 +406,7 @@ update.put = (args: { displayImage: number | { id: number } } | [displayImage: n
  * @see app/Http/Controllers/Admin/DisplayImageController.php:97
  * @route '/admin/display-images/{displayImage}'
  */
-export const destroy = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -421,7 +421,7 @@ destroy.definition = {
  * @see app/Http/Controllers/Admin/DisplayImageController.php:97
  * @route '/admin/display-images/{displayImage}'
  */
-destroy.url = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { displayImage: args }
     }
@@ -454,7 +454,7 @@ destroy.url = (args: { displayImage: number | { id: number } } | [displayImage: 
  * @see app/Http/Controllers/Admin/DisplayImageController.php:97
  * @route '/admin/display-images/{displayImage}'
  */
-destroy.delete = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -464,7 +464,7 @@ destroy.delete = (args: { displayImage: number | { id: number } } | [displayImag
  * @see app/Http/Controllers/Admin/DisplayImageController.php:97
  * @route '/admin/display-images/{displayImage}'
  */
-    const destroyForm = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -479,7 +479,7 @@ destroy.delete = (args: { displayImage: number | { id: number } } | [displayImag
  * @see app/Http/Controllers/Admin/DisplayImageController.php:97
  * @route '/admin/display-images/{displayImage}'
  */
-        destroyForm.delete = (args: { displayImage: number | { id: number } } | [displayImage: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { displayImage: string | number | { id: string | number } } | [displayImage: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',
