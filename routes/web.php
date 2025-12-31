@@ -64,7 +64,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         ->name('display-videos.destroy');
 
     // Kontainer Bawah Settings
-    // Kontainer Bawah Settings
     Route::get('/kontainer-bawah', [\App\Http\Controllers\Admin\KontainerBawahController::class, 'index'])
         ->name('kontainer-bawah.index');
     Route::get('/kontainer-bawah/create', [\App\Http\Controllers\Admin\KontainerBawahController::class, 'create'])

@@ -424,7 +424,7 @@ const Index = ({ flyers: propFlyers = [], videoUrl, kontainerBawah = [] }: TVDis
             {/* Footer */}
 
             <footer className="bg-gradient-to-r from-gray-900 to-blue-900 border-t border-blue-500/20 py-2 px-4">
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-1">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-">
 
                     {/* Kiri */}
                     <div className="text-xs text-gray-400">
